@@ -3,14 +3,14 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDt8Kbrv8esPaZCxxVhkvsd49GvIustV7Q",
-    authDomain: "webpadel-2c6cd.firebaseapp.com",
-    projectId: "webpadel-2c6cd",
-    storageBucket: "webpadel-2c6cd.appspot.com",
-    messagingSenderId: "118840528504",
-    appId: "1:118840528504:web:6974a9c9754db586c8a78d",
-    measurementId: "G-VB36Y4TTWH"
+var firebaseConfig = {
+    apiKey: "AIzaSyAqX5Cu2H3PzkY-XMyR3dL5qqJ04Zdk0OQ",
+    authDomain: "webpadel-991c6.firebaseapp.com",
+    projectId: "webpadel-991c6",
+    storageBucket: "webpadel-991c6.appspot.com",
+    messagingSenderId: "1058064416021",
+    appId: "1:1058064416021:web:b295e4674f346f44fafd1c",
+    measurementId: "G-S9MNLK5VGM"
   };
 
 firebase.initializeApp(firebaseConfig);
