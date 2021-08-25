@@ -1,0 +1,20 @@
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+
+    .button-line{
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+    
+    .bottom-button{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
