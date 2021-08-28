@@ -57,7 +57,15 @@ class SignIn extends React.Component{
                 <h3>Iniciar sesión</h3>
                 <p>Inicia sesión con tu red social:</p>
                 <div className='button-line'>
-                    <button onClick={signInWithFacebook} style={{background: "url(file://../../assets/facebook.png) no repeat"}}>
+                    <button 
+                        onClick={signInWithFacebook} 
+                        style={
+                            {
+                                backgroundImage: "url('file://../../assets/facebook.png') center no-repeat",
+                                backgroundSize:'100% 100%'
+                            }
+                        }
+                    >
                         Facebook                        
                     </button>
                     <button onClick={signInWithGoogle}>

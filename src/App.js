@@ -10,6 +10,27 @@ import SignUp from './pages/signup/signup.component';
 
 
 
+const Header = ({currentUser, ...otherProps}) => (
+  <div>
+    <h1>HOLA {currentUser ? currentUser.displayName : ""}</h1>
+    {
+      currentUser ?
+        <button onClick={
+          () => 
+          (auth.signOut())}
+        >
+          SIGN OUT
+        </button>
+        :
+        <h1>ADIOS</h1>
+    }
+  </div>
+)
+
+  
+
+
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -55,6 +76,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
+        <Header currentUser={this.state.currentUser}/>
         <Switch>
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
