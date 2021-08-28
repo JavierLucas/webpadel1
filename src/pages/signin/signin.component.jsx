@@ -3,9 +3,10 @@ import React from 'react';
 import InputForm from '../../components/input-form/input-form.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 
-import { signInWithGoogle, signInWithFacebook, signInWithTwitter } from '../../firebase/firebase.utils';
+import { signInWithGoogle, signInWithFacebook, signInWithTwitter, auth } from '../../firebase/firebase.utils';
 
 import './signin.styles.scss';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,17 +15,40 @@ class SignIn extends React.Component{
         super(props);
         this.state = {
             email: '',
-            passWord: ''
+            password: ''
         }
     }
 
 
     handleChange = e => {
-        const {value, name} = e.target();
+        const {value, name} = e.target;
 
         this.setState({
             [name]: value
         })
+    }
+
+    handleSubmit = async e => {
+        e.preventDefault();
+        const {email, password} = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+
+            this.setState({
+                email:'',
+                password: ''
+            });
+
+            console.log("Iniciar sesión correctamente")
+
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
+
+
     }
 
     render(){
@@ -33,7 +57,7 @@ class SignIn extends React.Component{
                 <h3>Iniciar sesión</h3>
                 <p>Inicia sesión con tu red social:</p>
                 <div className='button-line'>
-                    <button onClick={signInWithFacebook}>
+                    <button onClick={signInWithFacebook} style={{background: "url(file://../../assets/facebook.png) no repeat"}}>
                         Facebook                        
                     </button>
                     <button onClick={signInWithGoogle}>
@@ -45,7 +69,7 @@ class SignIn extends React.Component{
                 </div>
 
                 <p>O hazlo con tu email y contraseña:</p>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <InputForm
                         name='email'
                         type='email'
@@ -59,7 +83,7 @@ class SignIn extends React.Component{
                         name='password'
                         type='password'
                         label='Contraseña'
-                        value={this.state.passWord}
+                        value={this.state.password}
                         required
                         handleChange={this.handleChange}
                     />
@@ -69,13 +93,16 @@ class SignIn extends React.Component{
                             ENVIAR
                         </CustomButton>
 
-                        <CustomButton 
-                            type='button' 
-                            onClick={null}
-                            inverse
-                        >
-                            CREAR UNA NUEVA CUENTA
-                        </CustomButton>
+                        <Link to='/signup'>
+                            <CustomButton 
+                                type='button' 
+                                onClick={null}
+                                inverse
+                            >
+                                CREAR UNA NUEVA CUENTA
+                            </CustomButton>
+                        </Link>
+                        
                     </div>
 
                     

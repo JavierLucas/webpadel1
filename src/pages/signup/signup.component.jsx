@@ -41,7 +41,9 @@ class SignUp extends React.Component{
                 email: '',
                 password: '',
                 confirmPassword: ''
-            })
+            });
+
+            console.log("Usuario creado correctamente");
             
         } catch (error) {
             console.error(error);
