@@ -12,7 +12,7 @@ import SignUp from './pages/signup/signup.component';
 
 const Header = ({currentUser, ...otherProps}) => (
   <div>
-    <h1>HOLA {currentUser ? currentUser.displayName : ""}</h1>
+    <h1>HOLA {currentUser ? currentUser.displayName + " " + currentUser.perfil : ""}</h1>
     {
       currentUser ?
         <button onClick={

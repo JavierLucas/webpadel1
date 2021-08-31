@@ -21,9 +21,15 @@ class SignUp extends React.Component{
     }
 
     handleSubmit = async event => {
-        event.preventDefault()
+        event.preventDefault();
 
         const {displayName, email, password, confirmPassword} = this.state;
+
+        const perfil = document.getElementById('tipoPerfil').value;
+
+        console.log("Tipo perfil: ")
+
+        console.log(perfil);
 
         if(password !== confirmPassword){
             alert("Las contraseñas no coinciden");
@@ -34,7 +40,7 @@ class SignUp extends React.Component{
 
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
 
-            await createUserProfileDocument(user, {displayName});
+            await createUserProfileDocument(user, perfil, {displayName});
 
             this.setState({
                 displayName: '',
@@ -99,6 +105,13 @@ class SignUp extends React.Component{
                         label='Confirmar contraseña'
                         required
                     />
+                    <label>Selecciona un perfil: </label>
+                    <select name='tipoPerfil' id='tipoPerfil'>
+                        <option value='usuario'>Usuario</option>
+                        <option value='club'>Club</option>
+                        <option value='profesor'>Profesor</option>
+                    </select>
+
 
                     <CustomButton type='submit'>REGISTRARSE</CustomButton>
 

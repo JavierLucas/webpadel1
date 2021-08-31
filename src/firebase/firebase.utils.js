@@ -41,7 +41,7 @@ export const signInWithTwitter = () => auth.signInWithPopup(twitterProvider);
 
 export default firebase;
 
-export const createUserProfileDocument = async(userAuth, additionalData) => {
+export const createUserProfileDocument = async(userAuth, perfil='usuario',additionalData) => {
     if(!userAuth) return; //if theres no auth, we exit
 
     //Check if it already exists
@@ -58,6 +58,7 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
                 displayName,
                 email,
                 createdAt,
+                perfil,
                 ...additionalData
             });            
         } catch (error) {
