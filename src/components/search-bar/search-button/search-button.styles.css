@@ -1,0 +1,18 @@
+.search-button {
+    height: 50px;
+    min-width: 150px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(131, 207, 17);
+    color: white;
+    user-select: none;
+    flex-grow: 1;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: rgb(55, 145, 20);
+}

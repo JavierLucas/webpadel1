@@ -1,0 +1,70 @@
+.week-container {
+    display: flex;
+    flex-direction: row;
+
+    .week-day-today {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2px;
+        background-color: #a381ff;
+        color: rgb(0, 0, 0);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .week-day-number {
+            width: 30px;
+            margin-right: 2px;
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            border-radius: 100px;
+        }
+
+        .week-day-text {
+            margin-left: 2px;
+            width: 30px;
+            padding-top: 2px;
+        }
+    }
+
+    .week-day {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2px;
+        background-color: #98defa;
+        color: rgb(0, 0, 0);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .week-day-number {
+            width: 30px;
+            margin-right: 2px;
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            border-radius: 100px;
+        }
+
+        .week-day-text {
+            margin-left: 2px;
+            width: 30px;
+            padding-top: 2px;
+        }
+    }
+}

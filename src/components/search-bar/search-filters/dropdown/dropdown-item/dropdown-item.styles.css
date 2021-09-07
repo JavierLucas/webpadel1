@@ -1,0 +1,40 @@
+.item-container {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.item-containerr {
+    height: 40px;
+}
+
+
+.item-icon-container {
+    padding:7px;
+    width: 40px;
+    height: 20px;
+}
+.item-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+.item-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.date-buttons-container {
+    padding: 7px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(131, 207, 17);
+    font-weight: bolder;
+    flex-grow: 1;
+}
+.date-buttons-container:hover {
+    cursor: pointer;
+    background-color: rgb(55, 145, 20);
+}

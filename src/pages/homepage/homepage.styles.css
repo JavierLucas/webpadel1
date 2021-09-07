@@ -1,0 +1,46 @@
+
+.homepage-pres {
+  text-align: center;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.padelminded.nl%2Fwp-content%2Fuploads%2F2020%2F05%2FPadel-racket-duurzaamheid.jpg&f=1&nofb=1');
+  background-size: cover;
+  min-height:100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: "Zen Tokyo Zoo";
+  font-size: 72px;
+  color: #ffffff
+}
+
+.class-container {
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 25px;
+}
+
+.class-title {
+  padding: 30px;
+  padding-bottom: 10px;
+}
+
+.search-container {
+  justify-content: center;
+  align-items: center;
+  min-width: 350px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+@media screen and (max-width: 550px){
+  .search-container {
+    margin: 1px;
+  }
+  .calendario-div {
+    margin: 1px;
+  }
+
+}

@@ -1,6 +1,18 @@
-.App{
-  display: flex;
-  justify-content: center;
-  
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page-organizer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
 }

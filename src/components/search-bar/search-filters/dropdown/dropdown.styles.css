@@ -1,0 +1,58 @@
+.dd-list {
+    max-width: 150px;
+    width: 15%;
+    box-sizing: content-box;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+
+}
+
+.item-clicker {
+    box-sizing: border-box;
+}
+.item-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.item-clicker:hover {
+    font-weight: bold;
+}
+.dd-list-item {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    min-height: 50px;
+
+}
+
+.date-container input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    min-height: 30px;
+    outline: none;
+    text-align: center;
+    -webkit-appearance: none;
+    padding: 5px;
+}
+.date-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.date-item {
+    flex-grow: 1;
+    padding: 5px;
+}

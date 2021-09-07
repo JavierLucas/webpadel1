@@ -1,90 +1,37 @@
+import React, { Component } from 'react';
 import './App.css';
+import Footer from './components/footer/footer.component';
+import { data } from './components/footer/footerData/footerData';
+import { Switch, Route } from 'react-router-dom';
+import Homepage from './pages/homepage/homepage.component';
+import ClassPage from './pages/classInfo/classpage.component';
 
-import React from 'react';
-import {Route, Switch} from 'react-router-dom'
+const footerData = data;
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+class App extends Component{
 
-import SignIn from './pages/signin/signin.component';
-import SignUp from './pages/signup/signup.component';
-
-
-
-const Header = ({currentUser, ...otherProps}) => (
-  <div>
-    <h1>HOLA {currentUser ? currentUser.displayName + " " + currentUser.perfil : ""}</h1>
-    {
-      currentUser ?
-        <button onClick={
-          () => 
-          (auth.signOut())}
-        >
-          SIGN OUT
-        </button>
-        :
-        <h1>ADIOS</h1>
-    }
-  </div>
-)
-
-  
-
-
-
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      currentUser: null
-
-    }
-  }
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      
-      
-      if(userAuth){
-        const userRef = await createUserProfileDocument(userAuth);
-        
-        userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser:{
-              id: snapShot.id,
-              ...snapShot.data()
-            }
-          }, () => {
-            console.log(this.state)
-
-          });
-        });
-      }
-      else{
-        this.setState({
-          currentUser: null
-        });
-      }
-    });
-  }
-
-  componentWillUnmount(){
-    this.unsubscribeFromAuth();
-  }
-
-  render(){
+  render() {
+    //const {monsters, searchField} = this.state;
+    //const filteredMons = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()));
     return (
-      <div className="App">
-        <Header currentUser={this.state.currentUser}/>
-        <Switch>
-          <Route exact path='/signin' component={SignIn}/>
-          <Route exact path='/signup' component={SignUp}/>
-        </Switch>
+      <div className='App'>
+        <div className='page-organizer'>
+          <div className='main'>
+            <Switch>
+              <Route exact path='/' component={Homepage}></Route>
+              <Route exact path='/classInfo' component={ClassPage}></Route>
+              {
+                footerData.map(items => items.links.map(item =>
+                  <Route exact path={item.link} component={item.component}></Route>
+                  ))
+              }
+            </Switch>
+          </div>
+        <Footer text='WebPadel 2021' data={footerData}/>
+        </div>
       </div>
     );
   }
-  
 }
 
 export default App;

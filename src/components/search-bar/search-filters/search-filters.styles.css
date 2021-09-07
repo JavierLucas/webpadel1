@@ -1,0 +1,42 @@
+.search-filters-container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin: 10px;
+    justify-content: center;
+}
+
+.dd-wrapper {
+    height: 50px;
+    min-width: 100px;
+    user-select: none;
+    flex-grow: 1;
+    background-color: white;
+    margin: 0px 2px;
+    font-weight: lighter;
+}
+.dd-header:hover{
+    border-bottom: 2px solid black;
+}
+
+.dd-header {
+    height: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.dd-header-title {
+    height: 100%;
+    width: 85%;
+    padding-top: 10px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.filter-eraser {
+    width: 15%;
+    padding-top: 10px;
+}

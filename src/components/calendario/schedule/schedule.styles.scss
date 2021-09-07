@@ -1,0 +1,83 @@
+.drop-calendar {
+    position: absolute;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 500;
+    height:500px;
+    width: 350px;
+    margin-left: 40%;
+    margin-right: 40%;
+    background-color: red;
+    border-radius: 10px;
+    
+    .drop-calendar-image {
+        width: 100%;
+        height: 100px;
+        background-color: green;
+        justify-content: center;
+
+        .drop-calendar-image-circle {
+            margin: 0 auto;
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+    }
+
+    .drop-calendar-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.hours-container {
+    border-radius: 5px;
+    background-color: rgb(255,255,255);
+    outline: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hour-container {
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+
+        .day-hour-blank {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            flex-grow: 1;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+
+            .day-hour-blank-part {
+                flex-grow: 1;
+            }
+            &:hover {
+                background-color: rgb(137, 255, 137);
+                opacity: 0.5;
+            }
+        }
+
+        .day-hour-red {
+            background-color: rgb(255, 128, 128);
+            flex-grow: 1;
+            border-right: 1px solid rgb(255, 128, 128);
+            border-bottom: 1px solid rgb(255, 128, 128);
+        }
+
+        .day-hour-text {
+            padding-top: 15px;
+            min-width: 60px;
+            margin-left: 2px;
+            border-right: 1px solid black;
+        }
+    }
+}
